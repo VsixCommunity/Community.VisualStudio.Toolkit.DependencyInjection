@@ -1,0 +1,115 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31512.422
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{04B6A6A3-DDE9-44E3-9F95-329655236728}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		appveyor.yml = appveyor.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSSDK.DITestExtension", "test\VSSDK.TestExtension\VSSDK.DITestExtension.csproj", "{7F36F7DF-119E-4175-B1FA-C723EE10BD9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3808B5B3-2974-470E-AB36-B6A7424FF4C5}"
+	ProjectSection(SolutionItems) = preProject
+		src\Core\AssemblyInfo.cs = src\Core\AssemblyInfo.cs
+		src\Core\Community.VisualStudio.Toolkit.DependencyInjection.Core.props = src\Core\Community.VisualStudio.Toolkit.DependencyInjection.Core.props
+		src\Core\Community.VisualStudio.Toolkit.DependencyInjection.Core.targets = src\Core\Community.VisualStudio.Toolkit.DependencyInjection.Core.targets
+		src\Core\DependencyInjection.Core.Common.props = src\Core\DependencyInjection.Core.Common.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microsoft", "Microsoft", "{FB4B0B0F-301D-4B83-A50F-93DCA3D69C4B}"
+	ProjectSection(SolutionItems) = preProject
+		src\Microsoft\AssemblyInfo.cs = src\Microsoft\AssemblyInfo.cs
+		src\Microsoft\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.props = src\Microsoft\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.props
+		src\Microsoft\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.targets = src\Microsoft\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.targets
+		src\Microsoft\DependencyInjection.Microsoft.Common.props = src\Microsoft\DependencyInjection.Microsoft.Common.props
+	EndProjectSection
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Community.VisualStudio.Toolkit.DependencyInjection.Core.Shared", "src\Core\Shared\Community.VisualStudio.Toolkit.DependencyInjection.Core.Shared.shproj", "{BEB996A4-E7DA-4D44-A21C-493AAF842203}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Toolkit.DependencyInjection.Core.14.0", "src\Core\14.0\Community.VisualStudio.Toolkit.DependencyInjection.Core.14.0.csproj", "{4CACF621-3002-4120-A6A7-8847F0F37419}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Toolkit.DependencyInjection.Core.15.0", "src\Core\15.0\Community.VisualStudio.Toolkit.DependencyInjection.Core.15.0.csproj", "{3F243841-0D26-4BE1-86A0-B3CC13FFF79C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Toolkit.DependencyInjection.Core.16.0", "src\Core\16.0\Community.VisualStudio.Toolkit.DependencyInjection.Core.16.0.csproj", "{D7114373-9FB4-472E-8E16-B4559C448431}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Toolkit.DependencyInjection.Core.17.0", "src\Core\17.0\Community.VisualStudio.Toolkit.DependencyInjection.Core.17.0.csproj", "{EFED2D4E-A50A-4209-9A11-1FEB5C56155A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.Shared", "src\Microsoft\Shared\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.Shared.shproj", "{249F45FF-16E4-417B-99FA-686D20ED42C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.14.0", "src\Microsoft\14.0\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.14.0.csproj", "{49D1EE39-B52A-4C09-A59E-51548DD62598}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.15.0", "src\Microsoft\15.0\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.15.0.csproj", "{49D98A36-6BA0-4BEC-A15C-27141436DEA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.16.0", "src\Microsoft\16.0\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.16.0.csproj", "{CDC6295B-24EC-47A8-B1E1-F9A2C31727B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.17.0", "src\Microsoft\17.0\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.17.0.csproj", "{B884D896-4648-4494-98B7-83B3D858D007}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Microsoft\Shared\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.Shared.projitems*{249f45ff-16e4-417b-99fa-686d20ed42c2}*SharedItemsImports = 13
+		src\Core\Shared\Community.VisualStudio.Toolkit.DependencyInjection.Core.Shared.projitems*{beb996a4-e7da-4d44-a21c-493aaf842203}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F36F7DF-119E-4175-B1FA-C723EE10BD9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F36F7DF-119E-4175-B1FA-C723EE10BD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F36F7DF-119E-4175-B1FA-C723EE10BD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F36F7DF-119E-4175-B1FA-C723EE10BD9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CACF621-3002-4120-A6A7-8847F0F37419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CACF621-3002-4120-A6A7-8847F0F37419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CACF621-3002-4120-A6A7-8847F0F37419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CACF621-3002-4120-A6A7-8847F0F37419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F243841-0D26-4BE1-86A0-B3CC13FFF79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F243841-0D26-4BE1-86A0-B3CC13FFF79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F243841-0D26-4BE1-86A0-B3CC13FFF79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F243841-0D26-4BE1-86A0-B3CC13FFF79C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7114373-9FB4-472E-8E16-B4559C448431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7114373-9FB4-472E-8E16-B4559C448431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7114373-9FB4-472E-8E16-B4559C448431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7114373-9FB4-472E-8E16-B4559C448431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFED2D4E-A50A-4209-9A11-1FEB5C56155A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFED2D4E-A50A-4209-9A11-1FEB5C56155A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFED2D4E-A50A-4209-9A11-1FEB5C56155A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFED2D4E-A50A-4209-9A11-1FEB5C56155A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D1EE39-B52A-4C09-A59E-51548DD62598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D1EE39-B52A-4C09-A59E-51548DD62598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D1EE39-B52A-4C09-A59E-51548DD62598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D1EE39-B52A-4C09-A59E-51548DD62598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D98A36-6BA0-4BEC-A15C-27141436DEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D98A36-6BA0-4BEC-A15C-27141436DEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D98A36-6BA0-4BEC-A15C-27141436DEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D98A36-6BA0-4BEC-A15C-27141436DEA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC6295B-24EC-47A8-B1E1-F9A2C31727B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC6295B-24EC-47A8-B1E1-F9A2C31727B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC6295B-24EC-47A8-B1E1-F9A2C31727B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC6295B-24EC-47A8-B1E1-F9A2C31727B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B884D896-4648-4494-98B7-83B3D858D007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B884D896-4648-4494-98B7-83B3D858D007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B884D896-4648-4494-98B7-83B3D858D007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B884D896-4648-4494-98B7-83B3D858D007}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BEB996A4-E7DA-4D44-A21C-493AAF842203} = {3808B5B3-2974-470E-AB36-B6A7424FF4C5}
+		{4CACF621-3002-4120-A6A7-8847F0F37419} = {3808B5B3-2974-470E-AB36-B6A7424FF4C5}
+		{3F243841-0D26-4BE1-86A0-B3CC13FFF79C} = {3808B5B3-2974-470E-AB36-B6A7424FF4C5}
+		{D7114373-9FB4-472E-8E16-B4559C448431} = {3808B5B3-2974-470E-AB36-B6A7424FF4C5}
+		{EFED2D4E-A50A-4209-9A11-1FEB5C56155A} = {3808B5B3-2974-470E-AB36-B6A7424FF4C5}
+		{249F45FF-16E4-417B-99FA-686D20ED42C2} = {FB4B0B0F-301D-4B83-A50F-93DCA3D69C4B}
+		{49D1EE39-B52A-4C09-A59E-51548DD62598} = {FB4B0B0F-301D-4B83-A50F-93DCA3D69C4B}
+		{49D98A36-6BA0-4BEC-A15C-27141436DEA1} = {FB4B0B0F-301D-4B83-A50F-93DCA3D69C4B}
+		{CDC6295B-24EC-47A8-B1E1-F9A2C31727B0} = {FB4B0B0F-301D-4B83-A50F-93DCA3D69C4B}
+		{B884D896-4648-4494-98B7-83B3D858D007} = {FB4B0B0F-301D-4B83-A50F-93DCA3D69C4B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0DD67C0-2617-498C-81F0-A5E4FF5831F1}
+	EndGlobalSection
+EndGlobal
