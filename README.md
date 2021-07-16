@@ -1,0 +1,1 @@
+# Dependency Injection for the [Community.VisualStudio.Toolkit](https://github.com/VsixCommunity/Community.VisualStudio.Toolkit)
