@@ -13,12 +13,12 @@ namespace TestExtension.Commands
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
-            IToolkitServiceProvider<TestExtensionPackage> serviceProvider = await VS.GetServiceAsync<SToolkitServiceProvider<TestExtensionPackage>, IToolkitServiceProvider<TestExtensionPackage>>();
+            IToolkitServiceProvider<DITestExtensionPackage> serviceProvider = await VS.GetServiceAsync<SToolkitServiceProvider<DITestExtensionPackage>, IToolkitServiceProvider<DITestExtensionPackage>>();
 
             if (serviceProvider == null)
-                await VS.MessageBox.ShowErrorAsync($"There was an error trying to retrieve the {nameof(IToolkitServiceProvider<TestExtensionPackage>)}.");
+                await VS.MessageBox.ShowErrorAsync($"There was an error trying to retrieve the {nameof(IToolkitServiceProvider<DITestExtensionPackage>)}.");
             else
-                await VS.MessageBox.ShowAsync($"The {nameof(IToolkitServiceProvider<TestExtensionPackage>)} was retrieved from the service collection succuessfully!");
+                await VS.MessageBox.ShowAsync($"The {nameof(IToolkitServiceProvider<DITestExtensionPackage>)} was retrieved from the service collection succuessfully!");
         }
     }
 }

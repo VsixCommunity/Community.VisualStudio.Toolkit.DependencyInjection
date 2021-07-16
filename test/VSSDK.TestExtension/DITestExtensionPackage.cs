@@ -12,7 +12,7 @@ namespace VSSDK.TestExtension
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(PackageGuids.DITestExtensionString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    public sealed class TestExtensionPackage : MicrosoftDIToolkitPackage<TestExtensionPackage>
+    public sealed class DITestExtensionPackage : MicrosoftDIToolkitPackage<DITestExtensionPackage>
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
