@@ -31,6 +31,10 @@ namespace Community.VisualStudio.Toolkit.DependencyInjection
             await base.InitializeAsync(cancellationToken, progress);
 
             IServiceCollection services = this.CreateServiceCollection();
+            services.AddSingleton<AsyncPackage>(this); // Add the 'AsyncPackage' to the services
+            services.AddSingleton(this.GetType(), this); // Add the exact package type to the services as well.
+
+            // Initialize any services that the implementor desires.
             InitializeServices(services);
 
             IServiceProvider serviceProvider = BuildServiceProvider(services);
