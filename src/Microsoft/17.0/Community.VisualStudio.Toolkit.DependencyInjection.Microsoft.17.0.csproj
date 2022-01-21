@@ -3,9 +3,10 @@
   <Import Project="..\DependencyInjection.Microsoft.Common.props" />
   
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <Version>17.0</Version>
+    <TargetFramework>net48</TargetFramework>
     <DefineConstants>VS17</DefineConstants>
+    <MajorVersion>17</MajorVersion>
+    <PackageId>Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.$(MajorVersion)</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

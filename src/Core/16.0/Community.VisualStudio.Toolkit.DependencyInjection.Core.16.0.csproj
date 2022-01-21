@@ -4,12 +4,13 @@
   
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <Version>16.0</Version>
     <DefineConstants>VS16</DefineConstants>
+    <MajorVersion>16</MajorVersion>
+    <PackageId>Community.VisualStudio.Toolkit.DependencyInjection.$(MajorVersion)</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Community.VisualStudio.Toolkit" Version="16.0.75.152-pre" />
+    <PackageReference Include="Community.VisualStudio.Toolkit.16" Version="16.0.394" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>

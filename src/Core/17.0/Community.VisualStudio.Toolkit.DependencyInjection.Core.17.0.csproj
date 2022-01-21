@@ -3,13 +3,14 @@
   <Import Project="..\DependencyInjection.Core.Common.props" />
   
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <Version>17.0</Version>
+    <TargetFramework>net48</TargetFramework>
     <DefineConstants>VS17</DefineConstants>
+    <MajorVersion>17</MajorVersion>
+    <PackageId>Community.VisualStudio.Toolkit.DependencyInjection.$(MajorVersion)</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Community.VisualStudio.Toolkit" Version="17.0.75.152-pre" />
+    <PackageReference Include="Community.VisualStudio.Toolkit.17" Version="17.0.394" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>

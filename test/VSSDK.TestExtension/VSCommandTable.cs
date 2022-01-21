@@ -12,7 +12,7 @@ namespace TestExtension
     /// </summary>
     internal sealed partial class PackageGuids
     {
-        public const string DITestExtensionString = "E85F1C3F-9CCC-40EA-8040-79AC5723910D";
+        public const string DITestExtensionString = "e85f1c3f-9ccc-40ea-8040-79ac5723910d";
         public static Guid DITestExtension = new Guid(DITestExtensionString);
     }
     /// <summary>
