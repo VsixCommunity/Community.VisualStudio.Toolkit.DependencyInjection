@@ -1,5 +1,7 @@
 # Dependency Injection for the [Community.VisualStudio.Toolkit](https://github.com/VsixCommunity/Community.VisualStudio.Toolkit)
 
+[![Build status](https://ci.appveyor.com/api/projects/status/a77wgqcu1c9qb64a?svg=true)](https://ci.appveyor.com/project/madskristensen/community-visualstudio-toolkit-dependencyinjection)
+
 ## Usage
 
 Currently this package comes with a single implementation DI container, namely the `Microsoft.Extensions.DependencyInjection.ServiceCollection`.
