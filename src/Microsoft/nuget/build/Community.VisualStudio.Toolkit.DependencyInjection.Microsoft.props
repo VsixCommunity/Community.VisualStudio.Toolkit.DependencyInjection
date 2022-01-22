@@ -1,0 +1,13 @@
+﻿<!-- Toolkit projects. -->
+<Project>
+
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)..\lib\*\*.dll" CopyToOutputDirectory="PreserveNewest" Visible="false">
+      <Link>Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.dll</Link>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+
+    <Compile Condition="'$(Language)'=='C#'" Include="$(MSBuildThisFileDirectory)*.cs" Visible="false" />
+  </ItemGroup>
+  
+</Project>

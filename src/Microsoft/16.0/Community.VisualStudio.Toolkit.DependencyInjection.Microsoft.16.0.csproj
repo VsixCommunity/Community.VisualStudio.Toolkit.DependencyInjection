@@ -1,11 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\DependencyInjection.Microsoft.Common.props" />
-  
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <Version>16.0</Version>
-    <DefineConstants>VS16</DefineConstants>
+    <MajorVersion>16</MajorVersion>
+    <PackageId>Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.$(MajorVersion)</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

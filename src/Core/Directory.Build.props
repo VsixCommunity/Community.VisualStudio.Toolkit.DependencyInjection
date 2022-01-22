@@ -1,0 +1,31 @@
+<!-- Toolkit projects. -->
+<Project>
+
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)..\'))" />
+
+  <PropertyGroup>
+    <AssemblyName>Community.VisualStudio.Toolkit.DependencyInjection.Core</AssemblyName>
+    <PackageDescription>Adds Dependency Injection to the Community.VisualStudio.Toolkit</PackageDescription>
+    <PackageTags>VisualStudio, VSSDK, SDK</PackageTags>
+    <RootNamespace>Community.VisualStudio.Toolkit.DependencyInjection.Core</RootNamespace>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)nuget\build\Community.VisualStudio.Toolkit.DependencyInjection.Core.props" Pack="true" PackagePath="build\Community.VisualStudio.Toolkit.DependencyInjection.Core.$(MajorVersion).props" Visible="false" />
+    <None Include="$(MSBuildThisFileDirectory)nuget\build\AssemblyInfo.cs" Pack="true" PackagePath="build" Visible="false" />
+
+    <!-- Include all of the files in the "imports" folder. -->
+    <None Include="$(MSBuildThisFileDirectory)nuget\build\imports\*" Pack="true" PackagePath="build\imports" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)Shared\Community.VisualStudio.Toolkit.DependencyInjection.Core.Shared.projitems" Label="Shared" />
+
+</Project>

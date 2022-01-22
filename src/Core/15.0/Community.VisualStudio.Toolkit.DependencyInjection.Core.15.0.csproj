@@ -1,15 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <Import Project="..\DependencyInjection.Core.Common.props" />
   
   <PropertyGroup>
     <TargetFramework>net46</TargetFramework>
-    <Version>15.0</Version>
-    <DefineConstants>VS15</DefineConstants>
+    <MajorVersion>15</MajorVersion>
+    <PackageId>Community.VisualStudio.Toolkit.DependencyInjection.Core.$(MajorVersion)</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Community.VisualStudio.Toolkit" Version="15.0.75.152-pre" />
+    <PackageReference Include="Community.VisualStudio.Toolkit.15" Version="15.0.394" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="1.1.1" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>

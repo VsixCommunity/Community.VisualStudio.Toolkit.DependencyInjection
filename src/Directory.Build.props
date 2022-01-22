@@ -1,0 +1,34 @@
+<!-- All projects that create NuGet packages. -->
+<Project>
+
+  <PropertyGroup>
+    <Authors>VSIX Community</Authors>
+    <Owners>VSIX Community</Owners>
+    <Copyright>© Steven Rasmussen. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/VsixCommunity/Community.VisualStudio.Toolkit</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIcon>Icon.png</PackageIcon>
+
+    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)key.snk</AssemblyOriginatorKeyFile>
+
+    <Nullable>enable</Nullable>
+    <LangVersion>9</LangVersion>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Icon.png" Link="Icon.png" Pack="true" PackagePath="" Visible="false" />
+  </ItemGroup>
+
+</Project>
