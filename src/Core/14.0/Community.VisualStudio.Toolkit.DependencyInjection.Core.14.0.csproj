@@ -1,12 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <Import Project="..\DependencyInjection.Core.Common.props" />
   
   <PropertyGroup>
     <TargetFramework>net46</TargetFramework>
-    <DefineConstants>VS14</DefineConstants>
     <MajorVersion>14</MajorVersion>
-    <PackageId>Community.VisualStudio.Toolkit.DependencyInjection.$(MajorVersion)</PackageId>
+    <PackageId>Community.VisualStudio.Toolkit.DependencyInjection.Core.$(MajorVersion)</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

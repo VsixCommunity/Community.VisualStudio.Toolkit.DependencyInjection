@@ -6,6 +6,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		appveyor.yml = appveyor.yml
+		src\Directory.Build.props = src\Directory.Build.props
+		src\Directory.Build.targets = src\Directory.Build.targets
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -13,10 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSSDK.DITestExtension", "te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3808B5B3-2974-470E-AB36-B6A7424FF4C5}"
 	ProjectSection(SolutionItems) = preProject
-		src\Core\AssemblyInfo.cs = src\Core\AssemblyInfo.cs
-		src\Core\Community.VisualStudio.Toolkit.DependencyInjection.Core.props = src\Core\Community.VisualStudio.Toolkit.DependencyInjection.Core.props
-		src\Core\Community.VisualStudio.Toolkit.DependencyInjection.Core.targets = src\Core\Community.VisualStudio.Toolkit.DependencyInjection.Core.targets
-		src\Core\DependencyInjection.Core.Common.props = src\Core\DependencyInjection.Core.Common.props
+		src\Core\Directory.Build.props = src\Core\Directory.Build.props
+		src\Core\Directory.Build.targets = src\Core\Directory.Build.targets
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microsoft", "Microsoft", "{FB4B0B0F-301D-4B83-A50F-93DCA3D69C4B}"
@@ -46,6 +46,15 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.16.0", "src\Microsoft\16.0\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.16.0.csproj", "{CDC6295B-24EC-47A8-B1E1-F9A2C31727B0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.17.0", "src\Microsoft\17.0\Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.17.0.csproj", "{B884D896-4648-4494-98B7-83B3D858D007}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{3AA98E25-18F3-4CF6-A459-2CC8C3F62FD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{0F000C32-1FED-49B8-8A7A-4F126C0937AA}"
+	ProjectSection(SolutionItems) = preProject
+		src\Core\nuget\build\AssemblyInfo.cs = src\Core\nuget\build\AssemblyInfo.cs
+		src\Core\nuget\build\Community.VisualStudio.Toolkit.DependencyInjection.Core.props = src\Core\nuget\build\Community.VisualStudio.Toolkit.DependencyInjection.Core.props
+		src\Core\nuget\build\Community.VisualStudio.Toolkit.DependencyInjection.Core.targets = src\Core\nuget\build\Community.VisualStudio.Toolkit.DependencyInjection.Core.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -108,6 +117,8 @@ Global
 		{49D98A36-6BA0-4BEC-A15C-27141436DEA1} = {FB4B0B0F-301D-4B83-A50F-93DCA3D69C4B}
 		{CDC6295B-24EC-47A8-B1E1-F9A2C31727B0} = {FB4B0B0F-301D-4B83-A50F-93DCA3D69C4B}
 		{B884D896-4648-4494-98B7-83B3D858D007} = {FB4B0B0F-301D-4B83-A50F-93DCA3D69C4B}
+		{3AA98E25-18F3-4CF6-A459-2CC8C3F62FD0} = {3808B5B3-2974-470E-AB36-B6A7424FF4C5}
+		{0F000C32-1FED-49B8-8A7A-4F126C0937AA} = {3AA98E25-18F3-4CF6-A459-2CC8C3F62FD0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0DD67C0-2617-498C-81F0-A5E4FF5831F1}
