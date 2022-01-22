@@ -9,6 +9,8 @@
     <Import_RootNamespace>Community.VisualStudio.Toolkit.DependencyInjection.Core</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)BaseDICommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandWrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DIToolkitPackage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IToolkitServiceProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SToolkitServiceProvider.cs" />
