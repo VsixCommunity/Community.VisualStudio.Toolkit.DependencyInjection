@@ -1,6 +1,8 @@
 # Dependency Injection for the [Community.VisualStudio.Toolkit](https://github.com/VsixCommunity/Community.VisualStudio.Toolkit)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/a77wgqcu1c9qb64a?svg=true)](https://ci.appveyor.com/project/madskristensen/community-visualstudio-toolkit-dependencyinjection)
+[![NuGet](https://img.shields.io/nuget/vpre/Community.VisualStudio.Toolkit.DependencyInjection.Core.17)](https://nuget.org/packages/Community.VisualStudio.Toolkit.DependencyInjection.Core.17/)
+[![NuGet](https://img.shields.io/nuget/vpre/Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.17)](https://nuget.org/packages/Community.VisualStudio.Toolkit.DependencyInjection.Microsoft.17/)
 
 ## Usage
 
