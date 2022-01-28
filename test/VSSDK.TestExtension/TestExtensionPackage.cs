@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Threading;
+using Community.VisualStudio.Toolkit;
 using Community.VisualStudio.Toolkit.DependencyInjection.Microsoft;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.Shell;
 using TestExtension;
-using TestExtension.Commands;
-using Task = System.Threading.Tasks.Task;
 
 namespace VSSDK.TestExtension
 {
@@ -14,14 +13,20 @@ namespace VSSDK.TestExtension
     [ProvideMenuResource("Menus.ctmenu", 1)]
     public sealed class TestExtensionPackage : MicrosoftDIToolkitPackage<TestExtensionPackage>
     {
-        protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
+        protected override void InitializeServices(IServiceCollection services)
         {
-            await base.InitializeAsync(cancellationToken, progress);
+            base.InitializeServices(services);
 
-            await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            // Register any commands into the DI container
+            services.RegisterCommands(ServiceLifetime.Singleton);
 
-            // Commands
-            await DependencyInjectionCommand.InitializeAsync(this);
+            // Register anything else
+            services.AddSingleton<SomeSingletonObject>();
         }
+    }
+
+    internal class SomeSingletonObject
+    {
+
     }
 }

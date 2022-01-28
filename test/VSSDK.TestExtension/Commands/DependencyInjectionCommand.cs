@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Community.VisualStudio.Toolkit;
+using Community.VisualStudio.Toolkit.DependencyInjection;
 using Community.VisualStudio.Toolkit.DependencyInjection.Core;
 using Microsoft.VisualStudio.Shell;
 using VSSDK.TestExtension;
@@ -7,9 +8,16 @@ using VSSDK.TestExtension;
 namespace TestExtension.Commands
 {
     [Command(PackageIds.TestDependencyInjection)]
-    internal sealed class DependencyInjectionCommand : BaseCommand<DependencyInjectionCommand>
+    internal sealed class DependencyInjectionCommand : BaseDICommand
     {
-        protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
+        private readonly SomeSingletonObject _singletonObject;
+        public DependencyInjectionCommand(DIToolkitPackage package, SomeSingletonObject singletonObject)
+            : base(package)
+        {
+            this._singletonObject = singletonObject;
+        }
+
+        protected async override Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
