@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)BaseDICommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CommandWrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DIToolkitPackage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IToolkitServiceProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SToolkitServiceProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ToolkitServiceProvider.cs" />

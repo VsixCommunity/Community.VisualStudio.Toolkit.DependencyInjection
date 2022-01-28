@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
@@ -10,6 +11,10 @@ namespace Community.VisualStudio.Toolkit.DependencyInjection.Core
     internal class CommandWrapper<T>
         where T : BaseDICommand
     {
+        private readonly MethodInfo _beforeQueryStatusMethod = typeof(BaseDICommand).GetMethods(BindingFlags.Instance | BindingFlags.NonPublic).First(x => x.Name == "BeforeQueryStatus" && x.GetParameters().Count() == 2);
+        private readonly MethodInfo _executeMethod = typeof(BaseDICommand).GetMethod("Execute", BindingFlags.Instance | BindingFlags.NonPublic);
+        private readonly MethodInfo _executeAsyncMethod = typeof(BaseDICommand).GetMethod("ExecuteAsync", BindingFlags.Instance | BindingFlags.NonPublic);
+
         private readonly IServiceProvider _serviceProvider;
 
         public CommandWrapper(IServiceProvider serviceProvider, AsyncPackage package)
@@ -44,21 +49,22 @@ namespace Community.VisualStudio.Toolkit.DependencyInjection.Core
         {
             using var scope = this._serviceProvider.CreateScope();
             var instance = (BaseDICommand)scope.ServiceProvider.GetRequiredService(typeof(T));
-            instance.BeforeQueryStatus(sender, e);
+            _beforeQueryStatusMethod.Invoke(instance, new object[] { sender, e });
         }
 
         protected void Execute(object sender, EventArgs e)
         {
             using var scope = this._serviceProvider.CreateScope();
             var instance = (BaseDICommand)scope.ServiceProvider.GetRequiredService(typeof(T));
-            instance.Execute(sender, e);
+            _executeMethod.Invoke(instance, new object[] { sender, e });
         }
 
         protected async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             using var scope = this._serviceProvider.CreateScope();
             var instance = (BaseDICommand)scope.ServiceProvider.GetRequiredService(typeof(T));
-            await instance.ExecuteAsync(e);
+            var executeAsyncTask = (Task)_executeAsyncMethod.Invoke(instance, new object[] { e });
+            await executeAsyncTask;
         }
     }
 }

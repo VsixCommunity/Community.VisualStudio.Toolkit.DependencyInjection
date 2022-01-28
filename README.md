@@ -25,6 +25,13 @@ public sealed class TestExtensionPackage : MicrosoftDIToolkitPackage<TestExtensi
     {
         // Register your services here
         services.AddSingleton<IYourService, YourService>();
+
+        // Register any commands. They can be registered as a 'Singleton' or 'Scoped'. 
+        // 'Transient' will work but in practice it will behave the same as 'Scoped'.
+        services.AddSingleton<YourCommand>();
+
+        // Alternatively, you can use the 'RegisterCommands' extension method to automatically register all commands in an assembly.
+        services.RegisterCommands(ServiceLifetime.Singleton);
         ...
     }
 
@@ -40,6 +47,67 @@ public sealed class TestExtensionPackage : MicrosoftDIToolkitPackage<TestExtensi
 }
 
 ```
+
+## Commands
+**Note**: Your commands ***MUST*** inherit from the `BaseDICommand` in order for them to work with the dependency injection system.
+
+
+### Example Command
+```csharp
+[Command(PackageIds.MyCommand)]
+public class MyCommand: BaseDICommand
+{
+    // This is passed in through the constructor
+    private readonly SomeSingletonObject _singletonObject;
+
+    public DependencyInjectionCommand(
+        DIToolkitPackage package, 
+        SomeSingletonObject singletonObject)
+        : base(package)
+    {
+        this._singletonObject = singletonObject;
+    }
+
+    protected async override Task ExecuteAsync(OleMenuCmdEventArgs e)
+    {
+        // Your execution logic here. This is executed in the context of a new scope.
+        ...
+    }
+
+    protected override void BeforeQueryStatus(EventArgs e)
+    {
+        // Your query logic here. This is executed in the context of a new scope.
+        ...  
+    }
+}
+```
+
+### Registering Your Commands
+
+You can register your commands in the DI container just like any other service. 
+Your commands will be instantiated at the time of invocation and the lifetime with which they were registered will be followed.
+For example, if a command was registered as a singleton, then the same instance will be returned every time the command is invoked.
+If a command is registered as `Scoped`, then a new instance will be instantiated every time the command is invoked, including when the `BeforeQueryStatus` message is called.
+
+```csharp
+protected override void InitializeServices(IServiceCollection services)
+{
+    ... 
+
+    // Register any commands. They can be registered as a 'Singleton' or 'Scoped'. 
+    // 'Transient' will work but in practice it will behave the same as 'Scoped'.
+    services.AddSingleton<YourCommand>();
+
+    // Alternatively, you can use the 'RegisterCommands' extension method to automatically register all commands in an assembly.
+    services.RegisterCommands(ServiceLifetime.Singleton);
+
+    ...
+}
+```
+
+
+Every call to the methods on your command use their own scope. 
+What that means is that any services retrieved from the DI container will be retrieved from that scoped container.
 
 ## Retrieving the `IServiceProvider` from the main VS Service Provider
 

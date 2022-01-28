@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Community.VisualStudio.Toolkit;
 using Community.VisualStudio.Toolkit.DependencyInjection.Microsoft;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.Shell;
 using TestExtension;
-using TestExtension.Commands;
 
 namespace VSSDK.TestExtension
 {
@@ -18,7 +18,7 @@ namespace VSSDK.TestExtension
             base.InitializeServices(services);
 
             // Register any commands into the DI container
-            services.AddTransient<DependencyInjectionCommand>();
+            services.RegisterCommands(ServiceLifetime.Singleton);
 
             // Register anything else
             services.AddSingleton<SomeSingletonObject>();
