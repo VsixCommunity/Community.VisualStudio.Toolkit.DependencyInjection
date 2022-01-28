@@ -11,9 +11,9 @@ namespace Community.VisualStudio.Toolkit.DependencyInjection.Core
     internal class CommandWrapper<T>
         where T : BaseDICommand
     {
-        private readonly MethodInfo _beforeQueryStatusMethod = typeof(BaseDICommand).GetMethods(BindingFlags.Instance | BindingFlags.NonPublic).First(x => x.Name == "BeforeQueryStatus" && x.GetParameters().Count() == 2);
-        private readonly MethodInfo _executeMethod = typeof(BaseDICommand).GetMethod("Execute", BindingFlags.Instance | BindingFlags.NonPublic);
-        private readonly MethodInfo _executeAsyncMethod = typeof(BaseDICommand).GetMethod("ExecuteAsync", BindingFlags.Instance | BindingFlags.NonPublic);
+        private static readonly MethodInfo _beforeQueryStatusMethod = typeof(BaseDICommand).GetMethods(BindingFlags.Instance | BindingFlags.NonPublic).First(x => x.Name == "BeforeQueryStatus" && x.GetParameters().Count() == 2);
+        private static readonly MethodInfo _executeMethod = typeof(BaseDICommand).GetMethod("Execute", BindingFlags.Instance | BindingFlags.NonPublic);
+        private static readonly MethodInfo _executeAsyncMethod = typeof(BaseDICommand).GetMethod("ExecuteAsync", BindingFlags.Instance | BindingFlags.NonPublic);
 
         private readonly IServiceProvider _serviceProvider;
 
@@ -48,22 +48,22 @@ namespace Community.VisualStudio.Toolkit.DependencyInjection.Core
         protected void BeforeQueryStatus(object sender, EventArgs e)
         {
             using var scope = this._serviceProvider.CreateScope();
-            var instance = (BaseDICommand)scope.ServiceProvider.GetRequiredService(typeof(T));
+            BaseDICommand instance = (BaseDICommand)scope.ServiceProvider.GetRequiredService(typeof(T));
             _beforeQueryStatusMethod.Invoke(instance, new object[] { sender, e });
         }
 
         protected void Execute(object sender, EventArgs e)
         {
             using var scope = this._serviceProvider.CreateScope();
-            var instance = (BaseDICommand)scope.ServiceProvider.GetRequiredService(typeof(T));
+            BaseDICommand instance = (BaseDICommand)scope.ServiceProvider.GetRequiredService(typeof(T));
             _executeMethod.Invoke(instance, new object[] { sender, e });
         }
 
         protected async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             using var scope = this._serviceProvider.CreateScope();
-            var instance = (BaseDICommand)scope.ServiceProvider.GetRequiredService(typeof(T));
-            var executeAsyncTask = (Task)_executeAsyncMethod.Invoke(instance, new object[] { e });
+            BaseDICommand instance = (BaseDICommand)scope.ServiceProvider.GetRequiredService(typeof(T));
+            Task executeAsyncTask = (Task)_executeAsyncMethod.Invoke(instance, new object[] { e });
             await executeAsyncTask;
         }
     }
