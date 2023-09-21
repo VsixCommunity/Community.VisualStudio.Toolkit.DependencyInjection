@@ -54,6 +54,8 @@ namespace Community.VisualStudio.Toolkit.DependencyInjection
                 .Where(x => typeof(BaseDICommand).IsAssignableFrom(x.ImplementationType))
                 .ToList();
 
+            await JoinableTaskFactory.SwitchToMainThreadAsync();
+
             foreach (var command in commands)
             {
                 var baseCommandTypeGeneric = typeof(CommandWrapper<>).MakeGenericType(command.ImplementationType);
