@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Community.VisualStudio.Toolkit.DependencyInjection.Core;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,6 +18,7 @@ namespace Community.VisualStudio.Toolkit
         /// <param name="serviceLifetime">Generally you should register them with a lifetime of <see cref="ServiceLifetime.Singleton"/>. You can also register them with a lifetime of <see cref="ServiceLifetime.Scoped"/></param>
         /// <param name="assemblies">Assemblies to scan for commands that inherit from <see cref="BaseDICommand"/>. If none are provided, then the calling assembly is scanned.</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.NoInlining)] // prevent the compiler from inlining the call to Assembly.GetCallingAssembly()
         public static IServiceCollection RegisterCommands(this IServiceCollection services, ServiceLifetime serviceLifetime, params Assembly[] assemblies)
         {
             if (!(assemblies?.Any() ?? false))
